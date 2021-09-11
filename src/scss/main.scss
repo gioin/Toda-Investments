@@ -1,0 +1,19 @@
+@import 'abstracts/variable';
+@import 'abstracts/mixins';
+
+@import 'base/base';
+@import 'base/typography';
+@import 'base/utilities';
+@import 'base/animations';
+
+@import 'layout/flexbox';
+@import 'layout/footer';
+@import 'layout/header';
+@import 'layout/navigation';
+
+@import 'components/contact';
+@import 'components/socialMedia';
+@import 'components/burger';
+// @import 'components/button';
+
+@import 'pages/home';

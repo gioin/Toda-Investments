@@ -1,0 +1,12 @@
+.social {
+  a {
+    text-decoration: none;
+  }
+  &__media {
+    width: 20px;
+  }
+
+  a:not(:last-child) {
+    margin-right: 10px;
+  }
+}

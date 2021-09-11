@@ -1,0 +1,91 @@
+.top-part {
+  background-color: $color-grey-light-2;
+  height: 50px;
+  &__content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  @include respond(tab-port) {
+    display: none;
+  }
+}
+
+#main-logo {
+  width: 240px;
+}
+
+.middle-part {
+  padding: 24px 0;
+  &__content {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.bottom-part {
+  background-color: $color-grey-light-1;
+  overflow-y: hidden;
+  @include respond(tab-port) {
+    transition: all 0.4s;
+  }
+
+  @include respond(tab-port) {
+    display: block;
+    position: absolute;
+    width: 100%;
+    justify-content: center;
+    height: 0;
+
+    .nav {
+      display: block;
+    }
+    ul {
+      flex-direction: column;
+    }
+
+    li {
+      border-top: 1px solid #7d7d7d;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .container {
+      display: block;
+      padding: 0;
+    }
+  }
+}
+
+// navigation responsivness
+.bottom-part.active {
+  @include respond(tab-port) {
+    height: 296px;
+  }
+}
+
+.nav {
+  ul {
+    display: flex;
+  }
+
+  a {
+    text-decoration: none;
+    color: #fff;
+    text-transform: capitalize;
+  }
+
+  li {
+    text-decoration: none;
+    list-style: none;
+    padding: 17px 19px;
+  }
+  li:hover {
+    background-color: $color-grey-dark-2;
+  }
+}

@@ -1,0 +1,36 @@
+.header-contact {
+  display: flex;
+  @include respond(tab-port) {
+    display: none;
+  }
+}
+
+.contact {
+  display: flex;
+  align-items: center;
+
+  &__icon-circle {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: solid 1px #66bfd7;
+    flex-direction: row;
+    margin-right: 20px;
+    img {
+      width: 17px;
+    }
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.5rem;
+  }
+}
+
+.contact:not(:last-child) {
+  margin-right: 30px;
+}
