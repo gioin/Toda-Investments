@@ -25,3 +25,93 @@
     }
   }
 }
+
+// Why Us section
+.whyus-section {
+  background-color: $color-grey-light-2;
+  &__content {
+    display: grid;
+    // display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+
+    .item--4 {
+      grid-column-start: 2;
+      grid-column-end: 3;
+      @include respond(tab-port) {
+        grid-column-start: auto;
+        grid-column-end: auto;
+      }
+    }
+
+    img {
+      width: 48px;
+    }
+
+    .item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .heading-secondary {
+      margin: 15px 0;
+      display: flex;
+    }
+    @include respond(tab-port) {
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-rows: repeat(auto-fit, 1fr);
+    }
+  }
+  .heading-primary {
+    justify-content: center;
+    text-align: center;
+    padding-bottom: 40px;
+  }
+}
+
+// Offer Section
+
+.offer-section {
+  &__content {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    .heading-primary {
+      justify-content: center;
+    }
+    .box {
+      border: 1px solid $color-primary;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 30px 90px;
+      margin-top: 30px;
+      flex-direction: column;
+      cursor: pointer;
+
+      i {
+        font-size: 40px;
+        color: $color-primary;
+      }
+      .heading-tertiary {
+        margin-bottom: 12px;
+      }
+    }
+    .box:hover {
+      background-color: $color-primary;
+      color: #fff;
+      i {
+        color: #fff;
+      }
+      .heading-tertiary {
+        color: #fff;
+      }
+    }
+  }
+}

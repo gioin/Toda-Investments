@@ -8,7 +8,6 @@ body {
 }
 
 .heading-primary {
-  font-weight: bold;
   font-size: 2.9rem;
   width: 100%;
   margin-bottom: 24px;
@@ -22,18 +21,16 @@ body {
 }
 
 .heading-secondary {
-  font-size: 2.3rem;
-  font-weight: 600;
-  margin-bottom: 2rem;
+  font-size: 2rem;
   text-transform: capitalize;
   transition: transform 0.9s, opacity 0.9s;
 }
 
 .heading-tertiary {
-  font-size: $default-font-size;
-  font-weight: 700;
+  font-size: 1.3rem;
   text-transform: uppercase;
   transition: transform 0.9s, opacity 0.9s;
+  color: #646a7c;
 }
 
 .paragraph {
