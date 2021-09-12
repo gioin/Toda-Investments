@@ -1,0 +1,46 @@
+.message-form {
+  display: flex;
+  flex-direction: column;
+  input:not(:last-child) {
+    background-color: #f4f6f8;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 25px;
+    padding: 0 15px;
+  }
+
+  input:focus {
+    outline: none;
+    border: 1px solid $color-blue-dark;
+  }
+
+  textarea:focus {
+    outline: none;
+    border: 1px solid $color-blue-dark;
+  }
+
+  textarea {
+    background-color: #f4f6f8;
+    border: none;
+    border-radius: 5px;
+    padding: 15px;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  #submit {
+    max-width: 180px;
+    height: 40px;
+    border-radius: 40px;
+    background-color: $color-primary;
+    color: #fff;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    transition: 0.5s;
+  }
+
+  #submit:hover {
+    background-color: $color-blue-dark;
+  }
+}

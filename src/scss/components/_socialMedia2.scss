@@ -1,0 +1,26 @@
+.social-media2 {
+  display: flex;
+  &__circle {
+    text-decoration: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: $color-primary;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+  }
+
+  &__circle:not(:last-child) {
+    margin-right: 12px;
+  }
+
+  &__circle:hover {
+    background-color: #232530;
+  }
+
+  img {
+    width: 18px;
+  }
+}

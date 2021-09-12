@@ -1,0 +1,27 @@
+.contact-section {
+  &__content {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    .left-side {
+      flex: 1;
+      margin-right: 30px;
+      @include respond(tab-port-plus) {
+        margin-bottom: 25px;
+        margin-right: 0;
+      }
+    }
+    .right-side {
+      flex: 1;
+      width: 100%;
+    }
+
+    @include respond(tab-port-plus) {
+      flex-direction: column;
+      justify-content: center;
+      align-items: inherit;
+    }
+  }
+}
