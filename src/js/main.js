@@ -1,9 +1,114 @@
-// Burger menu
-
+// ------------- Burger menu ----------------
 const burger = document.querySelector('.burger');
 const nav = document.querySelector('.bottom-part');
 
-burger.addEventListener('click', function () {
-  burger.classList.toggle('change');
-  nav.classList.toggle('active');
+document.addEventListener('click', function (e) {
+  if (e.target.closest('.burger')) {
+    burger.classList.toggle('change');
+    nav.classList.toggle('active');
+  }
+  if (e.target.closest('.nav') || e.target.closest('.burger')) return;
+  nav.classList.remove('active');
+  burger.classList.remove('change');
+});
+
+// ------------- Swiper ----------------
+var elements = document.querySelectorAll('.fader__slide');
+var sliderElement = document.getElementById('my-keen-slider');
+const frontTextimg = document.querySelectorAll('.front-textimg');
+
+var interval = 0;
+function autoplay(run) {
+  clearInterval(interval);
+  interval = setInterval(() => {
+    if (run && slider) {
+      slider.next();
+    }
+  }, 4000);
+}
+
+var slider = new KeenSlider('#my-keen-slider', {
+  slides: elements.length,
+  loop: true,
+  duration: 3000,
+  move: s => {
+    var opacities = s.details().positions.map(slide => slide.portion);
+    elements.forEach((element, idx) => {
+      element.style.opacity = opacities[idx];
+    });
+  },
+  dragStart: () => {
+    autoplay(false);
+  },
+  dragEnd: () => {
+    autoplay(true);
+  },
+  created: function (instance) {
+    document
+      .getElementById('arrow-left')
+      .addEventListener('click', function () {
+        instance.prev();
+      });
+
+    document
+      .getElementById('arrow-right')
+      .addEventListener('click', function () {
+        instance.next();
+      });
+  },
+
+  slideChanged: slider => {
+    const currentSlide = slider.details().relativeSlide;
+    console.log(currentSlide);
+
+    Array.from(frontTextimg).map(text => {
+      if (text.id == currentSlide) {
+        console.log(text);
+        // text.classList.remove('none');
+
+        setTimeout(function () {
+          text.classList.remove('none');
+        }, 0);
+        setTimeout(function () {
+          text.classList.add('none');
+        }, 3900);
+        //
+      }
+    });
+  },
+});
+// sliderElement.addEventListener('mouseover', () => {
+//   autoplay(false);
+// });
+// sliderElement.addEventListener('mouseout', () => {
+//   autoplay(true);
+// });
+autoplay(true);
+
+// ------------- Scrol button header section ----------------
+const swiperSection = document.querySelector('.swiper-section');
+const btnScrollUp = document.querySelector('.btn-scroll-up');
+
+const myFunction = (entries, observer) => {
+  console.log(entries[0].isIntersecting);
+  console.log(observer);
+  if (!entries[0].isIntersecting) {
+    btnScrollUp.classList.add('active');
+  } else {
+    btnScrollUp.classList.remove('active');
+  }
+};
+
+const swiperSectionObserver = new IntersectionObserver(myFunction, {
+  root: null,
+  threshold: 0.2,
+});
+
+swiperSectionObserver.observe(swiperSection);
+
+// ------------- Scroll Up ----------------
+const header = document.querySelector('.header');
+
+btnScrollUp.addEventListener('click', function () {
+  header.scrollIntoView({ behavior: 'smooth', header });
 });

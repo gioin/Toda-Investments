@@ -14,11 +14,17 @@
 }
 
 #main-logo {
-  width: 240px;
+  width: 260px;
+  @include respond(phone) {
+    width: 206px;
+  }
 }
 
 .middle-part {
   padding: 24px 0;
+  @include respond(tab-port) {
+    padding: 9px 0;
+  }
   &__content {
     display: flex;
     width: 100%;
@@ -30,8 +36,13 @@
 .bottom-part {
   background-color: $color-grey-light-1;
   overflow-y: hidden;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 2000;
   @include respond(tab-port) {
     transition: all 0.4s;
+    top: auto;
   }
 
   @include respond(tab-port) {
@@ -39,10 +50,12 @@
     position: absolute;
     width: 100%;
     justify-content: center;
-    height: 0;
-
+    // height: 0;
+    z-index: 2000;
     .nav {
       display: block;
+      height: 0;
+      transition: all 0.4s;
     }
     ul {
       flex-direction: column;
@@ -65,7 +78,9 @@
 // navigation responsivness
 .bottom-part.active {
   @include respond(tab-port) {
-    height: 296px;
+    .nav {
+      height: 296px;
+    }
   }
 }
 

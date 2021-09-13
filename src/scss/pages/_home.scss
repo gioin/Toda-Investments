@@ -7,7 +7,7 @@
 
     .left-side {
       flex: 1;
-      margin-right: 30px;
+      margin-right: 40px;
       @include respond(tab-port-plus) {
         margin-bottom: 25px;
         margin-right: 0;
@@ -16,12 +16,16 @@
     .right-side {
       flex: 1;
       width: 100%;
+      margin-top: 15px;
     }
 
     @include respond(tab-port-plus) {
       flex-direction: column;
       justify-content: center;
       align-items: inherit;
+      iframe {
+        height: 300px;
+      }
     }
   }
 }
@@ -31,7 +35,6 @@
   background-color: $color-grey-light-2;
   &__content {
     display: grid;
-    // display: grid;
     grid-template-rows: repeat(2, 1fr);
     grid-template-columns: repeat(3, 1fr);
     gap: 40px;
@@ -44,9 +47,9 @@
         grid-column-end: auto;
       }
     }
-
-    img {
-      width: 48px;
+    span {
+      color: $color-primary;
+      font-size: 48px;
     }
 
     .item {
@@ -74,7 +77,6 @@
 }
 
 // Offer Section
-
 .offer-section {
   &__content {
     width: 100%;
@@ -85,28 +87,37 @@
     .heading-primary {
       justify-content: center;
     }
+
+    .heading-secondary {
+      text-align: center;
+    }
+
     .box {
       border: 1px solid $color-primary;
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 30px 90px;
+      padding: 30px 80px;
       margin-top: 30px;
       flex-direction: column;
       cursor: pointer;
+      text-align: center;
 
-      i {
-        font-size: 40px;
+      span {
         color: $color-primary;
+        font-size: 48px;
       }
       .heading-tertiary {
+        margin-top: 13px;
         margin-bottom: 12px;
+        font-size: 17px;
+        text-transform: capitalize;
       }
     }
     .box:hover {
       background-color: $color-primary;
       color: #fff;
-      i {
+      span {
         color: #fff;
       }
       .heading-tertiary {

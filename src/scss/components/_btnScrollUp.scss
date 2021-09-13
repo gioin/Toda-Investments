@@ -1,0 +1,26 @@
+.btn-scroll-up {
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+  background-color: $color-primary;
+  border: none;
+
+  position: fixed;
+  right: 23px;
+  bottom: -70px;
+  transition: 1s;
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08), 0 6px 6px rgba(0, 0, 0, 0.23);
+  .ti-angle-up {
+    color: #fff;
+  }
+  transition: 0.5s;
+}
+
+.btn-scroll-up:hover {
+  background-color: $color-blue-dark;
+}
+
+.btn-scroll-up.active {
+  bottom: 20px;
+}

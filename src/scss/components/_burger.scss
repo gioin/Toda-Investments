@@ -1,8 +1,10 @@
 .burger {
   display: none;
   cursor: pointer;
+  z-index: 2000;
   @include respond(tab-port) {
     display: inline-block;
+    transform: scale(0.8, 0.8);
   }
 }
 
@@ -14,6 +16,7 @@
   background-color: #333;
   margin: 6px 0;
   transition: 0.4s;
+  transform: scale(1, 0.9);
 }
 
 .change .bar1 {

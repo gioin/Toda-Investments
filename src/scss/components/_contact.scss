@@ -20,7 +20,10 @@
     flex-direction: row;
     margin-right: 20px;
     img {
-      width: 17px;
+      width: 18px;
+    }
+    img:first-child {
+      width: 15px;
     }
   }
 
