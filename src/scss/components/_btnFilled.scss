@@ -1,0 +1,16 @@
+.btn-filled {
+  max-width: 132px;
+  height: 39px;
+  border-radius: 40px;
+  background-color: $color-primary;
+  color: #fff;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  transition: 0.5s;
+  font-size: 1.6rem;
+}
+
+.btn-filled:hover {
+  background-color: $color-blue-dark;
+}

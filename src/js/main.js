@@ -16,6 +16,7 @@ document.addEventListener('click', function (e) {
 var elements = document.querySelectorAll('.fader__slide');
 var sliderElement = document.getElementById('my-keen-slider');
 const frontTextimg = document.querySelectorAll('.front-textimg');
+const author = document.querySelectorAll('.author');
 
 var interval = 0;
 function autoplay(run) {
@@ -24,7 +25,7 @@ function autoplay(run) {
     if (run && slider) {
       slider.next();
     }
-  }, 4000);
+  }, 3900);
 }
 
 var slider = new KeenSlider('#my-keen-slider', {
@@ -59,24 +60,42 @@ var slider = new KeenSlider('#my-keen-slider', {
 
   slideChanged: slider => {
     const currentSlide = slider.details().relativeSlide;
-    console.log(currentSlide);
-
-    Array.from(frontTextimg).map(text => {
+    const absoluteSlide = slider.details().absoluteSlide;
+    let id1, id2;
+    console.log(absoluteSlide);
+    Array.from(frontTextimg).map((text, index, list) => {
       if (text.id == currentSlide) {
-        console.log(text);
-        // text.classList.remove('none');
+        id1 = setTimeout(() => {
+          text.style.opacity = '1';
+        }, 400);
 
-        setTimeout(function () {
-          text.classList.remove('none');
-        }, 0);
-        setTimeout(function () {
-          text.classList.add('none');
-        }, 3900);
-        //
+        if (text.id == absoluteSlide) {
+          list[0].style.opacity = '1';
+        }
+
+        id1 = setTimeout(() => {
+          text.style.opacity = '0';
+          console.log(id1);
+        }, 3350);
+      }
+
+      if (currentSlide == 5) {
+        list[0].style.opacity = '0';
+        list[1].style.opacity = '0';
+        list[2].style.opacity = '0';
+        list[3].style.opacity = '0';
+        list[4].style.opacity = '0';
+        // if (text.id != 5) {
+        //   clearTimeout(id1);
+        // }
+      }
+      if (currentSlide == 1) {
+        list[5].style.opacity = '0';
       }
     });
   },
 });
+
 // sliderElement.addEventListener('mouseover', () => {
 //   autoplay(false);
 // });
@@ -90,8 +109,6 @@ const swiperSection = document.querySelector('.swiper-section');
 const btnScrollUp = document.querySelector('.btn-scroll-up');
 
 const myFunction = (entries, observer) => {
-  console.log(entries[0].isIntersecting);
-  console.log(observer);
   if (!entries[0].isIntersecting) {
     btnScrollUp.classList.add('active');
   } else {

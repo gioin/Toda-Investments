@@ -1,0 +1,38 @@
+.small-nav {
+  padding: 27px 0;
+  &__content {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .left-side {
+      display: flex;
+      align-items: center;
+    }
+    span {
+      padding: 0 10px;
+      color: $color-grey-light-4;
+      font-size: 1.2rem;
+    }
+    a {
+      color: $color-grey-light-4;
+      text-decoration: none;
+      font-size: 1.5rem;
+      transition: $animation-duration;
+      text-transform: capitalize;
+    }
+
+    a:hover {
+      color: $color-primary;
+    }
+    .trail-end {
+      color: $color-primary;
+    }
+
+    .right-side {
+      font-size: 2.3rem;
+      text-transform: capitalize;
+    }
+  }
+}

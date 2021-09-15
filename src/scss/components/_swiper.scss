@@ -61,6 +61,9 @@
   -webkit-transform: translateY(-50%);
   fill: #fff;
   cursor: pointer;
+  @include respond(phone) {
+    display: none;
+  }
 }
 
 .arrow--left {
@@ -76,25 +79,69 @@
   fill: rgba(255, 255, 255, 0.5);
 }
 
-.front_text {
-  z-index: 1;
+.front-textimg {
   position: absolute;
-  max-width: 600px;
-  background: rgba(49, 84, 124, 0.808);
-  padding: 20px 0px;
-  margin: 0 20px;
-  margin-top: 20px;
   display: flex;
-  justify-content: center;
   flex-direction: column;
   align-items: center;
-  text-align: center;
-  color: rgba(255, 255, 255, 0.794);
-  animation-name: moveInLeft;
-  animation-duration: 0.9s;
-  animation-timing-function: ease-out;
-  transition: transform 0.9s, opacity 0.9s;
-  p {
-    width: 90%;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  transition: transform();
+  transform: translate(-50%, -50%);
+  height: auto;
+  opacity: 0;
+  margin-top: 20px;
+
+  overflow-y: hidden;
+  transition: all 0.9s;
+  -wekit-transition: all 0.9s;
+  -moz-transition: all 0.9s;
+  @include respond(phone) {
+    width: 88%;
+  }
+
+  .front_text {
+    max-width: 600px;
+    background: rgba(17, 27, 39, 0.55);
+    // background-color: hsla(0, 1%, 25%, 0.71);
+    padding: 20px 0px;
+    margin: 0 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.794);
+    // margin-top: 40px;
+
+    p {
+      width: 90%;
+      font-size: 2.2rem;
+      @include respond(phone) {
+        font-size: 1.5rem;
+      }
+
+      @include respond(tab-port) {
+        font-size: 1.8rem;
+      }
+    }
+  }
+
+  .author {
+    color: #fff;
+    margin-top: 10px;
+    background-color: hsla(0, 100%, 38%, 0.6);
+    padding: 5px 9px 5px 9px;
+    // display: none;
+    // margin-left: 80px;
+
+    // animation-delay: 0.9s;
+    @include respond(phone) {
+      font-size: 1.4rem;
+    }
+    @include respond(tab-port) {
+      font-size: 1.6rem;
+    }
   }
 }
