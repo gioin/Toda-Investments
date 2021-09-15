@@ -269,11 +269,19 @@
         <div class="contact-section__content">
           <div class="left-side">
             <div class="heading-primary">contact us</div>
-            <form class="message-form">
-              <input type="text" name="name" placeholder="Name" />
-              <input type="email" name="email" placeholder="Email" />
+            <form
+              action="https://formsubmit.co/giorgi.injgia.1@iliauni.edu.ge"
+              method="POST"
+              class="message-form"
+            >
+              <input type="hidden" name="_subject" value="New submission!!" />
+              <input type="hidden" name="_captcha" value="false" />
+
+              <input type="text" name="name" placeholder="Name" required />
+              <input type="email" name="email" placeholder="Email" required />
               <input type="text" name="website" placeholder="Website" />
               <textarea
+                required
                 name="message"
                 id="message"
                 cols="30"
@@ -331,7 +339,7 @@
           </div>
 
           <div class="somelinks">
-            <div>Some links</div>
+            <div>Menu</div>
             <ul>
               <a href="#"><li>service</li></a>
               <a href="#"><li>partners</li></a>
