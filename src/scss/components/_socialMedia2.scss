@@ -27,4 +27,16 @@
   img {
     width: 18px;
   }
+  .google-plus {
+    width: 20px;
+  }
+
+  @include respond(phone) {
+    img {
+      width: 16px;
+    }
+    .google-plus {
+      width: 19px;
+    }
+  }
 }

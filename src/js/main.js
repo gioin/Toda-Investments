@@ -67,7 +67,7 @@ var slider = new KeenSlider('#my-keen-slider', {
       if (text.id == currentSlide) {
         id1 = setTimeout(() => {
           text.style.opacity = '1';
-        }, 400);
+        }, 290);
 
         if (text.id == absoluteSlide) {
           list[0].style.opacity = '1';

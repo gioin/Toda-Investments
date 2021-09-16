@@ -38,15 +38,28 @@
     grid-template-rows: repeat(2, 1fr);
     grid-template-columns: repeat(3, 1fr);
     gap: 40px;
+    row-gap: 53px;
+    @include respond(tab-port) {
+      row-gap: 40px;
+    }
+    justify-content: start;
+    align-items: flex-start;
 
     .item--4 {
-      grid-column-start: 2;
-      grid-column-end: 3;
+      grid-column-start: 1;
+      grid-column-end: 4;
+      display: flex;
+      flex-direction: row;
       @include respond(tab-port) {
         grid-column-start: auto;
         grid-column-end: auto;
       }
     }
+
+    // .item--5 {
+    //   grid-column-start: 1;
+    //   grid-column-end: 3;
+    // }
     span {
       color: $color-primary;
       font-size: 48px;
@@ -60,8 +73,42 @@
       text-align: center;
     }
 
+    .bottom-items {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 72%;
+      height: 100%;
+      justify-content: space-around;
+      align-items: flex-start;
+      @include respond(tab-land) {
+        width: 90%;
+      }
+      @include respond(tab-port) {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+
+        .bottom-item:not(:last-child) {
+          margin-bottom: 40px;
+        }
+      }
+
+      .bottom-item {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        width: 360px;
+        @include respond(tab-port) {
+          width: 100%;
+        }
+      }
+    }
+
     .heading-secondary {
-      margin: 15px 0;
+      margin-top: 15px;
+      margin-bottom: 13px;
       display: flex;
     }
     @include respond(tab-port) {
@@ -100,8 +147,8 @@
       padding: 30px 80px;
       margin-top: 30px;
       flex-direction: column;
-      cursor: pointer;
       text-align: center;
+      text-decoration: none;
 
       span {
         color: $color-primary;
