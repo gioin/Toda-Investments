@@ -1,29 +1,29 @@
-const { src, dest, parallel, series, watch } = require("gulp");
+const { src, dest, parallel, series, watch } = require('gulp');
 
 // Load plugins
-const terser = require("gulp-terser");
-const rename = require("gulp-rename");
-const sass = require("gulp-sass");
-const autoprefixer = require("gulp-autoprefixer");
-const cssnano = require("gulp-cssnano");
-const concat = require("gulp-concat");
-const clean = require("gulp-clean");
-const imagemin = require("gulp-imagemin");
-const changed = require("gulp-changed");
-const browsersync = require("browser-sync").create();
-const htmlmin = require("gulp-htmlmin");
-const webp = require("gulp-webp");
+const terser = require('gulp-terser');
+const rename = require('gulp-rename');
+const sass = require('gulp-sass');
+const autoprefixer = require('gulp-autoprefixer');
+const cssnano = require('gulp-cssnano');
+const concat = require('gulp-concat');
+const clean = require('gulp-clean');
+const imagemin = require('gulp-imagemin');
+const changed = require('gulp-changed');
+const browsersync = require('browser-sync').create();
+const htmlmin = require('gulp-htmlmin');
+const webp = require('gulp-webp');
 
 // BrowserSync
 const PORT = 3000;
 
 // Directories
-const DEST = "./dist/";
+const DEST = './dist/';
 const DEST_JS = `${DEST}js/`;
 const DEST_CSS = `${DEST}css/`;
 const DEST_IMG = `${DEST}img/`;
 const DEST_FONT = `${DEST_CSS}font/`;
-const SRC = "./src/";
+const SRC = './src/';
 const SRC_JS = `${SRC}js/`;
 const SRC_CSS = `${SRC}scss/**/*.scss`;
 const SRC_IMG = `${SRC}img/`;
@@ -56,11 +56,11 @@ function js() {
 
   return src(source)
     .pipe(changed(source))
-    .pipe(concat("main.js"))
+    .pipe(concat('main.js'))
     .pipe(terser())
     .pipe(
       rename({
-        extname: ".min.js",
+        extname: '.min.js',
       })
     )
     .pipe(dest(DEST_JS))
@@ -75,18 +75,18 @@ function css() {
     .pipe(changed(source))
     .pipe(
       sass({
-        includePaths: ["node_modules"],
+        includePaths: ['node_modules'],
       })
     )
     .pipe(
       autoprefixer({
-        overrideBrowserslist: ["last 2 versions"],
+        overrideBrowserslist: ['last 2 versions'],
         cascade: false,
       })
     )
     .pipe(
       rename({
-        extname: ".min.css",
+        extname: '.min.css',
       })
     )
     .pipe(cssnano())
