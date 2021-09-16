@@ -18,7 +18,13 @@
 }
 
 section {
-  padding: 40px 0;
+  padding: 57px 0;
+}
+
+@include respond(phone) {
+  section {
+    padding: 47px 0;
+  }
 }
 
 .margin-b-0 {

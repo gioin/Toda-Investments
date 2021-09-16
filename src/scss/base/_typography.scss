@@ -34,8 +34,9 @@ br {
   font-size: 2.1rem;
   text-transform: capitalize;
   transition: transform 0.9s, opacity 0.9s;
+  font-weight: normal;
   @include respond(phone) {
-    font-size: 1.7rem;
+    font-size: 1.8rem;
   }
 }
 
@@ -43,6 +44,7 @@ br {
   font-size: 1.6rem;
   transition: transform 0.9s, opacity 0.9s;
   color: #646a7c;
+  font-weight: normal;
 }
 
 .paragraph {
