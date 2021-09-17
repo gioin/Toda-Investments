@@ -25,7 +25,7 @@ function autoplay(run) {
     if (run && slider) {
       slider.next();
     }
-  }, 3900);
+  }, 4800);
 }
 
 var slider = new KeenSlider('#my-keen-slider', {
@@ -62,7 +62,6 @@ var slider = new KeenSlider('#my-keen-slider', {
     const currentSlide = slider.details().relativeSlide;
     const absoluteSlide = slider.details().absoluteSlide;
     let id1, id2;
-    console.log(absoluteSlide);
     Array.from(frontTextimg).map((text, index, list) => {
       if (text.id == currentSlide) {
         id1 = setTimeout(() => {
@@ -75,8 +74,7 @@ var slider = new KeenSlider('#my-keen-slider', {
 
         id1 = setTimeout(() => {
           text.style.opacity = '0';
-          console.log(id1);
-        }, 3350);
+        }, 4250);
       }
 
       if (currentSlide == 5) {

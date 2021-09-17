@@ -14,6 +14,10 @@
       margin: 16px 0 20px 0;
     }
   }
+  .item div:first-child {
+    font-size: 1.9rem;
+    text-transform: capitalize;
+  }
 }
 
 .items3 {
@@ -29,11 +33,6 @@
   @include respond(tab-port) {
     grid-template-columns: repeat(auto-fit, 220px);
   }
-}
-
-.item div:first-child {
-  font-size: 1.9rem;
-  text-transform: capitalize;
 }
 
 .contact-section {
