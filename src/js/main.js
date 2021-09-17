@@ -100,7 +100,7 @@ var slider = new KeenSlider('#my-keen-slider', {
 // sliderElement.addEventListener('mouseout', () => {
 //   autoplay(true);
 // });
-autoplay(true);
+// autoplay(true);
 
 // ------------- Scrol button header section ----------------
 const swiperSection = document.querySelector('.swiper-section');

@@ -45,13 +45,16 @@
   .fader img {
     width: 130%;
   }
-  @include respond(phone) {
-    .fader img {
-      width: 160%;
-    }
+}
+@include respond(phone) {
+  .fader img {
+    width: 160%;
+  }
+
+  .fader #cover6 {
+    width: 181%;
   }
 }
-
 .arrow {
   width: 30px;
   height: 30px;
